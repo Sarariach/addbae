@@ -2,17 +2,17 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 
 class AddsList extends PureComponent {
-    static propTypes = {
-        adds: PropTypes.arrayOf(PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            title: PropTypes.string.isRequired,
-            description: PropTypes.sting.isRequired,
-            picture: PropTypes.string.isRequired,
-            price: PropTypes.number.isRequired,
-            email: PropTypes.string.isRequired,
-            phone: PropTypes.numer.isRequired
-        })).isRequired
-    }
+    // static propTypes = {
+    //     adds: PropTypes.arrayOf(PropTypes.shape({
+    //         id: PropTypes.number.isRequired,
+    //         title: PropTypes.string.isRequired,
+    //         description: PropTypes.string.isRequired,
+    //         picture: PropTypes.string.isRequired,
+    //         price: PropTypes.number.isRequired,
+    //         email: PropTypes.string.isRequired,
+    //         phone: PropTypes.number.isRequired
+    //     })).isRequired
+    
 
     render(){
         const {adds} = this.props 

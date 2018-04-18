@@ -2,7 +2,6 @@ import React, {PureComponent} from 'react'
 import {PropTypes} from 'prop-types'
 
 
-
 class AddDetails extends PureComponent {
     render() {
       const {add} = this.props
