@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {PropTypes} from 'prop-types'
-
+import {connect} from 'react-redux'
 
 class AddDetails extends PureComponent {
     render() {
@@ -17,4 +17,10 @@ class AddDetails extends PureComponent {
     }
   }
   
-  export default AddDetails
+  const mapStateToProps = function (state) {
+    return {
+      add: state.adds.find(add => add.id === 7)
+    }
+  }
+  
+  export default connect(mapStateToProps)(AddDetails)

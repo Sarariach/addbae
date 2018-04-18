@@ -1,1 +1,3 @@
-export deafult {}
+import adds from './adds'
+
+export default {adds}
