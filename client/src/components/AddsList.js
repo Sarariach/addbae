@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react'
 // import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {fetchAllAdds} from '../actions/adds'
+import {fetchAllAdds, createAdd} from '../actions/adds'
 import {Link} from 'react-router-dom'
+import AddForm from './AddForm'
 
 
 class AddsList extends PureComponent {
@@ -19,6 +20,9 @@ class AddsList extends PureComponent {
     
     componentWillMount() {
       this.props.fetchAllAdds()
+    }
+    createAdd = (add) => {
+      this.props.createAdd(add)
     }
     
     render(){
@@ -44,6 +48,8 @@ class AddsList extends PureComponent {
             </tr>)) }
           </tbody>
 				</table>
+        <h1>Create a new Add</h1>
+        <AddForm onSubmit={this.createAdd} />
       </div>
     )
   }
@@ -57,6 +63,9 @@ const mapStateToProps = function (state) {
   }
 }
 
-export default connect(mapStateToProps, {fetchAllAdds})(AddsList)
+export default connect(mapStateToProps, {
+  fetchAllAdds,
+  createAdd
+})(AddsList)
         
     
