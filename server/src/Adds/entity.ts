@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
-import { createConnection } from 'net';
+// import { createConnection } from 'net';
 
 @Entity()
 export default class Add extends BaseEntity {

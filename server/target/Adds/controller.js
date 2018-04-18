@@ -28,9 +28,8 @@ let AddController = class AddController {
             throw new routing_controllers_1.NotFoundError('Cannot find add');
         return entity_1.default.merge(add, update).save();
     }
-    createPage(body) {
-        console.log(`Incoming POST body param:`, body);
-        return body;
+    createPage(add) {
+        return add.save();
     }
 };
 __decorate([
@@ -60,7 +59,7 @@ __decorate([
     __param(0, routing_controllers_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [entity_1.default]),
-    __metadata("design:returntype", entity_1.default)
+    __metadata("design:returntype", void 0)
 ], AddController.prototype, "createPage", null);
 AddController = __decorate([
     routing_controllers_1.JsonController()

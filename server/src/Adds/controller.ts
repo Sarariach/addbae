@@ -28,9 +28,9 @@ async updateAdd(
 @Post('/adds')
 @HttpCode(201)
 createPage(
-@Body() body: Add
-): Add {
-    console.log(`Incoming POST body param:`, body)
-    return body
+    @Body() add: Add
+){
+    return add.save()
 }
+    
 }
