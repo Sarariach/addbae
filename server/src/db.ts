@@ -1,5 +1,5 @@
-import { createConnection } from 'typenorm'
-import { DefaultNamingStrategy } from 'typenorm/naming-strategy/DefaultNamingStrategy'
+import { createConnection } from 'typeorm'
+import { DefaultNamingStrategy } from 'typeorm/naming-strategy/DefaultNamingStrategy'
 import { NamingStrategyInterface } from 'typeorm/naming-strategy/NamingStrategyInterface'
 import { snakeCase } from 'typeorm/util/StringUtils'
 
@@ -31,4 +31,4 @@ class CustomNamingStrategy extends DefaultNamingStrategy implements NamingStrate
         logging: true,
         namingStrategy: new CustomNamingStrategy()
     })
-    .then(_ => console.log('Connected to Postgres with TypeORM')
+    .then(_ => console.log('Connected to Postgres with TypeORM'))

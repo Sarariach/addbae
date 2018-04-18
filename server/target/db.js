@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const typenorm_1 = require("typenorm");
-const DefaultNamingStrategy_1 = require("typenorm/naming-strategy/DefaultNamingStrategy");
+const typeorm_1 = require("typeorm");
+const DefaultNamingStrategy_1 = require("typeorm/naming-strategy/DefaultNamingStrategy");
 const StringUtils_1 = require("typeorm/util/StringUtils");
 class CustomNamingStrategy extends DefaultNamingStrategy_1.DefaultNamingStrategy {
     tableName(targetName, userSpecifiedName) {
@@ -17,7 +17,7 @@ class CustomNamingStrategy extends DefaultNamingStrategy_1.DefaultNamingStrategy
         return StringUtils_1.snakeCase(propertyName);
     }
 }
-exports.default = () => typenorm_1.createConnection({
+exports.default = () => typeorm_1.createConnection({
     type: "postgres",
     url: process.env.DATABASE_URL || 'postgres://postgres:secret@localhost:5432/postgres',
     entities: [],
