@@ -6,6 +6,7 @@ const controller_1 = require("./adds/controller");
 const db_1 = require("./db");
 const port = process.env.PORT || 4000;
 const app = routing_controllers_1.createKoaServer({
+    cors: true,
     controllers: [
         controller_1.default
     ]

@@ -1,3 +1,4 @@
 import adds from './adds'
+import add from './add'
 
-export default {adds}
+export default {adds, add}

@@ -1,6 +1,9 @@
 import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {fetchAllAdds} from '../actions/adds'
+import {Link} from 'react-router-dom'
+
 
 class AddsList extends PureComponent {
     // static propTypes = {
@@ -14,7 +17,10 @@ class AddsList extends PureComponent {
     //         phone: PropTypes.number.isRequired
     //     })).isRequired
     
-
+    componentWillMount() {
+      this.props.fetchAllAdds()
+    }
+    
     render(){
         const {adds} = this.props 
         return (
@@ -31,7 +37,8 @@ class AddsList extends PureComponent {
           </thead>
           <tbody>
             { adds.map(add => (<tr key={add.id}>
-              <td>{add.title}</td>
+              <td><Link to={`/adds/${add.id}`}>{add.title}</Link>
+              </td>
               <td>{add.description}</td>
               <td>&euro; {add.price}.00</td>
             </tr>)) }
@@ -42,12 +49,14 @@ class AddsList extends PureComponent {
   }
 }
 
+
+
 const mapStateToProps = function (state) {
   return {
     adds: state.adds
   }
 }
 
-export default connect(mapStateToProps)(AddsList)
+export default connect(mapStateToProps, {fetchAllAdds})(AddsList)
         
     

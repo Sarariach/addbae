@@ -1,10 +1,16 @@
 import React, {PureComponent} from 'react'
-import {PropTypes} from 'prop-types'
+// import {PropTypes} from 'prop-types'
 import {connect} from 'react-redux'
 
+
 class AddDetails extends PureComponent {
+  componentWillMount(props) {
+    this.props.fetchAdd(this.props.match.params.id)
+  } 
     render() {
       const {add} = this.props
+      if (!add) return null
+      
       return (
         <div>
           <h1>{ add.title }</h1>
@@ -17,9 +23,9 @@ class AddDetails extends PureComponent {
     }
   }
   
-  const mapStateToProps = function (state) {
+  const mapStateToProps = function (state, props) {
     return {
-      add: state.adds.find(a => a.id === number(props.match.params.id))
+      adds: state.add
     }
   }
   
