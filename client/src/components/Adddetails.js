@@ -1,20 +1,29 @@
 import React, {PureComponent} from 'react'
 // import {PropTypes} from 'prop-types'
 import {connect} from 'react-redux'
-
+import {fetchAdd} from '../actions/adds'
+import ImageClass from './ImageClass.css'
+import './addDetails.css'
 
 class AddDetails extends PureComponent {
+
   componentWillMount(props) {
     this.props.fetchAdd(this.props.match.params.id)
   } 
+
+  // toggleEdit = () => {
+  //   this.setState({
+  //     edit: !this.state.edit
+  //   })
+  // }
     render() {
       const {add} = this.props
       if (!add) return null
       
       return (
-        <div>
+        <div className="addDetailsDiv">
           <h1>{ add.title }</h1>
-         <div> <img src='https://prodimage.images-bn.com/pimages/9780545162074_p0_v2_s550x406.jpg' alt={add.title} style={{maxWidth:200 + 'px'}}/> :null}</div>
+         <img src={add.picture}  alt={add.title} className='imageClass'/>
          <p>{add.description}</p>
          <p>{add.email}</p>
          <p>{add.phone}</p>
@@ -25,8 +34,11 @@ class AddDetails extends PureComponent {
   
   const mapStateToProps = function (state, props) {
     return {
-      adds: state.add
+      add: state.add
     }
   }
   
-  export default connect(mapStateToProps)(AddDetails)
+  export default connect(mapStateToProps, {
+    fetchAdd
+  }
+)(AddDetails)

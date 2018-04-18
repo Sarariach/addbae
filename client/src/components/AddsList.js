@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {fetchAllAdds, createAdd} from '../actions/adds'
 import {Link} from 'react-router-dom'
 import AddForm from './AddForm'
-
+import './AddsList.css'
 
 class AddsList extends PureComponent {
     // static propTypes = {
@@ -28,14 +28,14 @@ class AddsList extends PureComponent {
     render(){
         const {adds} = this.props 
         return (
-            <div>
+            <div className='AddsListDiv'>
         <h1>All adds</h1>
 
         <table>
           <thead>
             <tr>
-              <th>#</th>
-              <th>Name</th>
+              <th>Title</th>
+              <th>Description</th>
               <th>Price</th>
             </tr>
           </thead>
