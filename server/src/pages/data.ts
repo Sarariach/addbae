@@ -1,4 +1,18 @@
-const pagesById = {
+export interface Add {
+    id:number,
+    title: string,
+    description: string,
+    picture: string,
+    price: number,
+    email: string,
+    phone: number
+}
+
+interface AddDatabase{
+    [id:number]:Add
+}
+
+const AddsById = {
     1: {
         id: 1,
         title: 'Buy Harry',
@@ -27,4 +41,4 @@ const pagesById = {
     }
   }
   
-  export default pagesById
+  export default AddsById
