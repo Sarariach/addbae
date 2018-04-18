@@ -19,7 +19,7 @@ class AddDetails extends PureComponent {
   
   const mapStateToProps = function (state) {
     return {
-      add: state.adds.find(add => add.id === 7)
+      add: state.adds.find(a => a.id === number(props.match.params.id))
     }
   }
   
