@@ -1,8 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 import { BaseEntity } from 'typeorm/repository/BaseEntity'
+import { createConnection } from 'net';
 
 @Entity()
-export default class Page extends BaseEntity {
+export default class Add extends BaseEntity {
 
   @PrimaryGeneratedColumn()
   id?: number
@@ -11,5 +12,18 @@ export default class Page extends BaseEntity {
   title: string
 
   @Column('text', {nullable:false})
-  content: string
+  description: string
+
+  @Column('text', {nullable:false})
+  picture: string
+
+  @Column('text', {nullable:false})
+  price: number
+
+  @Column('text', {nullable:false})
+  email: string
+
+  @Column('text', {nullable:false})
+  phone: number
 }
+

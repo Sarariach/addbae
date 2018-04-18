@@ -11,22 +11,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
 const BaseEntity_1 = require("typeorm/repository/BaseEntity");
-let Page = class Page extends BaseEntity_1.BaseEntity {
+let Add = class Add extends BaseEntity_1.BaseEntity {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], Page.prototype, "id", void 0);
+], Add.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column('text', { nullable: false }),
     __metadata("design:type", String)
-], Page.prototype, "title", void 0);
+], Add.prototype, "title", void 0);
 __decorate([
     typeorm_1.Column('text', { nullable: false }),
     __metadata("design:type", String)
-], Page.prototype, "content", void 0);
-Page = __decorate([
+], Add.prototype, "description", void 0);
+__decorate([
+    typeorm_1.Column('text', { nullable: false }),
+    __metadata("design:type", String)
+], Add.prototype, "picture", void 0);
+__decorate([
+    typeorm_1.Column('text', { nullable: false }),
+    __metadata("design:type", Number)
+], Add.prototype, "price", void 0);
+__decorate([
+    typeorm_1.Column('text', { nullable: false }),
+    __metadata("design:type", String)
+], Add.prototype, "email", void 0);
+__decorate([
+    typeorm_1.Column('text', { nullable: false }),
+    __metadata("design:type", Number)
+], Add.prototype, "phone", void 0);
+Add = __decorate([
     typeorm_1.Entity()
-], Page);
-exports.default = Page;
+], Add);
+exports.default = Add;
 //# sourceMappingURL=entity.js.map
